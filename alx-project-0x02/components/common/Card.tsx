@@ -1,7 +1,7 @@
 import React from "react";
-import { PostProps } from "@/interfaces";
+import { Card, CardProps } from "@/interfaces";
 
-export default function Card({ title, content, userId }: PostProps) {
+export default function Card({ title, content, userId }: CardProps) {
   return (
     <div className="border p-4 rounded shadow">
       <h2 className="text-xl font-semibold">{title}</h2>
