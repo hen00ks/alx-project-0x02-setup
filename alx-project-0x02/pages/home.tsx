@@ -1,19 +1,20 @@
-import { useState } from 'react'
-import Header from '@/components/layout/Header'
-import PostModal from '@/components/common/PostModal'
+import { useState } from "react";
+import Header from "@/components/layout/Header";
+import PostModal from "@/components/common/PostModal";
+import Card from "@/components/common/Card";
 
 interface Post {
-  title: string
-  content: string
+  title: string;
+  content: string;
 }
 
 export default function HomePage() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [posts, setPosts] = useState<Post[]>([])
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   const handleAddPost = (post: Post) => {
-    setPosts((prevPosts) => [post, ...prevPosts])
-  }
+    setPosts((prevPosts) => [post, ...prevPosts]);
+  };
 
   return (
     <>
@@ -44,5 +45,5 @@ export default function HomePage() {
         </div>
       </main>
     </>
-  )
+  );
 }
