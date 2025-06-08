@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardProps } from "@/interfaces";
+import type { CardProps } from "@/interfaces";
 
 export default function Card({ title, content, userId }: CardProps) {
   return (
