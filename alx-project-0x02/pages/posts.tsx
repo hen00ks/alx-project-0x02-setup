@@ -1,8 +1,8 @@
-import PostCard from '@/components/common/PostCard'
-import { PostProps } from '@/interfaces'
+import PostCard from "@/components/common/Card";
+import { PostProps } from "@/interfaces";
 
 interface PostsPageProps {
-  posts: PostProps[]
+  posts: PostProps[];
 }
 
 export default function PostsPage({ posts }: PostsPageProps) {
@@ -20,23 +20,25 @@ export default function PostsPage({ posts }: PostsPageProps) {
         ))}
       </div>
     </main>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
-  const data = await res.json()
+  const res = await fetch(
+    "https://jsonplaceholder.typicode.com/posts?_limit=10"
+  );
+  const data = await res.json();
 
   // Map API data to PostProps format
   const posts: PostProps[] = data.map((post: any) => ({
     title: post.title,
     content: post.body,
     userId: post.userId,
-  }))
+  }));
 
   return {
     props: {
       posts,
     },
-  }
+  };
 }
